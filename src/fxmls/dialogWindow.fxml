@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DialogWindowController">
+   <children>
+      <JFXButton fx:id="closeButton" layoutX="397.0" layoutY="353.0" prefHeight="34.0" prefWidth="83.0" ripplerFill="#868686" text="Zamknij" textFill="#aaaaaa">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </JFXButton>
+      <JFXButton fx:id="removeButton" layoutX="145.0" layoutY="357.0" ripplerFill="#868686" text="Usuń element" textFill="#aaaaaa">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </JFXButton>
+      <Label fx:id="title" alignment="CENTER" layoutX="34.0" layoutY="14.0" prefHeight="52.0" prefWidth="541.0" styleClass="red" stylesheets="@../css/labels.css" text="Tytuł" textFill="#b50000">
+         <font>
+            <Font size="31.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="imageView" fitHeight="255.0" fitWidth="200.0" layoutX="34.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true" />
+      <HBox fx:id="hBox" layoutX="281.0" layoutY="119.0" prefHeight="174.0" prefWidth="305.0">
+         <children>
+            <VBox fx:id="vBox1">
+               <children>
+                  <Label fx:id="label1" prefHeight="24.0" prefWidth="49.0" styleClass="red" stylesheets="@../css/labels.css" text="Kraje:" />
+                  <Label fx:id="label2" prefHeight="25.0" prefWidth="49.0" styleClass="red" stylesheets="@../css/labels.css" text="Aktorzy:" />
+                  <Label fx:id="label3" styleClass="red" stylesheets="@../css/labels.css" text="Rok powstania:" />
+                  <Label fx:id="label4" prefHeight="31.0" prefWidth="81.0" styleClass="red" stylesheets="@../css/labels.css" text="Cena:" />
+                  <Label fx:id="label5" styleClass="red" stylesheets="@../css/labels.css" text="Dystrybutor:" />
+                  <Label fx:id="label6" prefHeight="26.0" prefWidth="82.0" styleClass="red" stylesheets="@../css/labels.css" text="Typ:" />
+                  <Label fx:id="label7" prefHeight="23.0" prefWidth="83.0" styleClass="red" stylesheets="@../css/labels.css" text="Link:" />
+               </children>
+            </VBox>
+            <VBox fx:id="vBox2" prefHeight="174.0" prefWidth="223.0">
+               <children>
+                  <Label fx:id="countries" prefHeight="24.0" prefWidth="49.0" styleClass="red" stylesheets="@../css/labels.css" text="Kraje:" />
+                  <Label fx:id="actors" prefHeight="25.0" prefWidth="49.0" styleClass="red" stylesheets="@../css/labels.css" text="Aktorzy:" />
+                  <Label fx:id="year" styleClass="red" stylesheets="@../css/labels.css" text="Rok powstania:" />
+                  <Label fx:id="price" prefHeight="31.0" prefWidth="81.0" styleClass="red" stylesheets="@../css/labels.css" text="Cena:" />
+                  <Label fx:id="distributor" styleClass="red" stylesheets="@../css/labels.css" text="Dystrybutor:" />
+                  <Label fx:id="type" prefHeight="26.0" prefWidth="82.0" styleClass="red" stylesheets="@../css/labels.css" text="Typ:" />
+                  <Label fx:id="link" prefHeight="23.0" prefWidth="83.0" styleClass="red" stylesheets="@../css/labels.css" text="Link:" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

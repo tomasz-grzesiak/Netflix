@@ -1,0 +1,9 @@
+.red {
+    -fx-text-fill: #c40303;
+}
+
+.column {
+    -fx-background-color: #121212;
+    -fx-text-fill: #DDDDDD;
+    -fx-alignment: CENTER;
+}

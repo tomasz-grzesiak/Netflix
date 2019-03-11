@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MainWindowController">
+   <children>
+      <AnchorPane fx:id="anchorPane1" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: black;">
+         <children>
+            <VBox fx:id="vBox1" minWidth="600.0" prefHeight="500.0" prefWidth="600.0">
+               <children>
+                  <HBox fx:id="hBox1" prefWidth="200.0">
+                     <children>
+                        <ImageView fx:id="imageViev" fitHeight="78.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../data/images/N_logo.png" />
+                           </image>
+                        </ImageView>
+                        <JFXDialog />
+                        <JFXToggleButton fx:id="toggleButton" alignment="CENTER_LEFT" focusTraversable="false" onAction="#startStop" prefHeight="77.0" prefWidth="226.0" stylesheets="@../css/labels.css" text="Włącz symulację" textAlignment="JUSTIFY" textFill="WHITE" toggleColor="#444444" toggleLineColor="#999999">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXToggleButton>
+                        <VBox fx:id="vBox2" alignment="CENTER" prefHeight="78.0" prefWidth="103.0">
+                           <children>
+                              <Label fx:id="label1" prefHeight="32.0" prefWidth="76.0" styleClass="red" stylesheets="@../css/labels.css" text="Stan konta" textFill="#c40303">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="accountLabel" prefHeight="21.0" prefWidth="32.0" styleClass="red" stylesheets="@../css/labels.css" text="0 PLN" textFill="#c40303" />
+                           </children>
+                        </VBox>
+                        <Label fx:id="label2" alignment="CENTER" contentDisplay="CENTER" prefHeight="77.0" prefWidth="85.0" styleClass="red" stylesheets="@../css/labels.css" text="Dzień symulacji:" textAlignment="RIGHT" wrapText="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="daysCounterLabel" alignment="CENTER" prefHeight="77.0" prefWidth="73.0" styleClass="red" stylesheets="@../css/labels.css" text="0">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="buttonController" focusTraversable="false" onAction="#showHideController" prefHeight="77.0" prefWidth="81.0" ripplerFill="#868686" text="Panel kontrolny" textAlignment="CENTER" textFill="#dddddd" wrapText="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <effect>
+                              <InnerShadow blurType="ONE_PASS_BOX" />
+                           </effect>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <JFXTabPane fx:id="tabPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="429.0" prefWidth="600.0" scaleShape="false" side="BOTTOM" style="-fx-background-color: black;" tabClosingPolicy="UNAVAILABLE" tabMaxWidth="200.0" tabMinWidth="196.0">
+                     <tabs>
+                        <Tab fx:id="productsTab" style="-fx-background-color: #222222;" text="Produkty">
+                          <content>
+                            <AnchorPane fx:id="productsTabAnchorPane" minHeight="0.0" minWidth="0.0" pickOnBounds="false" prefHeight="386.0" prefWidth="400.0">
+                                 <children>
+                                    <TableView fx:id="productsTabTableView" editable="true" prefHeight="386.0" prefWidth="600.0" style="-fx-background-color: black;" stylesheets="@../css/labels.css">
+                                      <columns>
+                                        <TableColumn fx:id="productsTabColumnType" prefWidth="75.0" styleClass="column" text="Typ" />
+                                        <TableColumn fx:id="productsTabColumnTitle" prefWidth="75.0" styleClass="column" text="Tytuł" />
+                                          <TableColumn fx:id="productsTabColumnCountries" prefWidth="127.0" styleClass="column" text="Kraje produkcji" />
+                                          <TableColumn fx:id="productsTabColumnNote" prefWidth="75.0" styleClass="column" text="Nota" />
+                                          <TableColumn fx:id="productsTabColumnPrice" prefWidth="75.0" styleClass="column" text="Cena" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="usersTab" style="-fx-background-color: #222222;" text="Użytkownicy">
+                          <content>
+                            <AnchorPane fx:id="usersTabAnchorPane" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="600.0" stylesheets="@../css/labels.css">
+                                 <children>
+                                    <TableView fx:id="usersTabTableView" editable="true" prefHeight="388.0" prefWidth="600.0" style="-fx-background-color: black;">
+                                      <columns>
+                                        <TableColumn fx:id="usersTabColumnName" prefWidth="75.0" styleClass="column" text="Imię" />
+                                        <TableColumn fx:id="usersTabColumnAdress" prefWidth="75.0" styleClass="column" text="Adres e-mail" />
+                                          <TableColumn fx:id="usersTabColumnCardNumber" prefWidth="75.0" styleClass="column" text="Nr karty" />
+                                          <TableColumn fx:id="usersTabColumnSubscription" prefWidth="75.0" styleClass="column" text="Abonament" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                        <Tab fx:id="distributorsTab" style="-fx-background-color: #222222;" text="Dystrybutorzy">
+                          <content>
+                            <AnchorPane fx:id="disributorsTabAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="557.0">
+                                 <children>
+                                    <TableView fx:id="distributorsTabTableView" editable="true" prefHeight="386.0" prefWidth="600.0" style="-fx-background-color: black;" stylesheets="@../css/labels.css">
+                                      <columns>
+                                        <TableColumn fx:id="distributorsTabColumnId" prefWidth="75.0" styleClass="column" text="Id" />
+                                        <TableColumn fx:id="distributorsTabColumnMonthly" prefWidth="75.0" styleClass="column" text="Stawka miesięczna" />
+                                          <TableColumn fx:id="distributorsTabColumnPercent" prefWidth="75.0" styleClass="column" text="Procent od wyświetlenia" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </Tab>
+                     </tabs>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXTabPane>
+               </children>
+            </VBox>
+            <Label fx:id="label3" layoutX="588.0" layoutY="463.0" prefHeight="37.0" prefWidth="12.0" style="-fx-background-color: #222222;" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <AnchorPane fx:id="anchorPane2" layoutX="600.0" prefHeight="500.0" prefWidth="300.0" style="-fx-background-color: black;">
+         <children>
+            <VBox fx:id="vBox3" prefHeight="500.0" prefWidth="300.0">
+               <children>
+                  <HBox fx:id="hBox2" alignment="CENTER" prefHeight="77.0" prefWidth="300.0">
+                     <children>
+                        <VBox fx:id="vBox4" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="label4" alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="107.0" styleClass="red" stylesheets="@../css/labels.css" text="1. Miesiąc">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="firstMonthLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="105.0" text="------" textFill="#aaaaaa" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBox5" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="label5" alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="107.0" styleClass="red" stylesheets="@../css/labels.css" text="2. Miesiąc">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="secondMonthLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="105.0" text="------" textFill="#aaaaaa" />
+                           </children>
+                        </VBox>
+                        <VBox fx:id="vBox6" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label fx:id="label6" alignment="BOTTOM_CENTER" prefHeight="49.0" prefWidth="107.0" styleClass="red" stylesheets="@../css/labels.css" text="3. Miesiąc">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="thirdMonthLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="55.0" prefWidth="105.0" text="------" textFill="#aaaaaa" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox fx:id="hBox3">
+                     <children>
+                        <Label fx:id="label7" alignment="CENTER" prefHeight="91.0" prefWidth="231.0" styleClass="red" stylesheets="@../css/labels.css" text="Liczba produktów:" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="productsLabel" alignment="CENTER" prefHeight="93.0" prefWidth="99.0" styleClass="red" stylesheets="@../css/labels.css" text="0">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <JFXButton fx:id="buttonProducts" onAction="#createProduct" prefHeight="51.0" prefWidth="300.0" ripplerFill="#908c8c" text="Dodaj produkt" textFill="#aaaaaa">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXButton>
+                  <HBox fx:id="hBox4">
+                     <children>
+                        <Label fx:id="label8" alignment="CENTER" prefHeight="91.0" prefWidth="231.0" styleClass="red" stylesheets="@../css/labels.css" text="Liczba użytkowników:" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="usersLabel" alignment="CENTER" prefHeight="93.0" prefWidth="99.0" styleClass="red" stylesheets="@../css/labels.css" text="0">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <JFXButton fx:id="buttonUsers" onAction="#createUser" prefHeight="51.0" prefWidth="300.0" ripplerFill="#908c8c" text="Dodaj użytkownika" textFill="#aaaaaa">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXButton>
+                  <HBox fx:id="hBox5">
+                     <children>
+                        <Label fx:id="label9" alignment="CENTER" prefHeight="91.0" prefWidth="231.0" styleClass="red" stylesheets="@../css/labels.css" text="Liczba dystrybutorów:" textAlignment="CENTER" wrapText="true">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="distributorsLabel" alignment="CENTER" prefHeight="93.0" prefWidth="99.0" styleClass="red" stylesheets="@../css/labels.css" text="0">
+                           <font>
+                              <Font size="50.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <JFXButton fx:id="buttonDsitributors" onAction="#createDistributor" prefHeight="51.0" prefWidth="300.0" ripplerFill="#908c8c" text="Dodaj dystrybutora" textFill="#aaaaaa">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

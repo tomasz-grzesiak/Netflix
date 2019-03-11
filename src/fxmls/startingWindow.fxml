@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StartingWindowController">
+   <children>
+      <VBox fx:id="vBox" prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <HBox fx:id="hBox1" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageView" fitHeight="118.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../data/images/N_logo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="label1" alignment="BOTTOM_CENTER" prefHeight="79.0" prefWidth="481.0" styleClass="red" stylesheets="@../css/labels.css" text="Początkowe parametry symulacji:">
+                     <font>
+                        <Font size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="hBox2" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="label2" alignment="CENTER" prefHeight="100.0" prefWidth="430.0" text="Liczba dystrybutorów:" textFill="#333333">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="jfxTextFieldDistributors" alignment="BOTTOM_CENTER" focusColor="#8d8d8d" focusTraversable="false" prefHeight="75.0" prefWidth="65.0" styleClass="red" stylesheets="@../css/labels.css" text="3">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox fx:id="hBox3" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="label3" alignment="CENTER" prefHeight="100.0" prefWidth="430.0" text="Liczba użytkowników:" textFill="#333333">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <JFXTextField fx:id="jfxTextFieldUsers" alignment="BOTTOM_CENTER" focusColor="#8d8d8d" focusTraversable="false" prefHeight="75.0" prefWidth="65.0" styleClass="red" stylesheets="@../css/labels.css" text="8">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <HBox fx:id="hBox4" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="label4" alignment="CENTER" prefHeight="99.0" prefWidth="395.0" text="Liczba produktów:" textFill="#333333">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label5" prefWidth="35.0" />
+                  <JFXTextField fx:id="jfxTextFieldProducts" alignment="BOTTOM_CENTER" focusColor="#8d8d8d" focusTraversable="false" prefHeight="75.0" prefWidth="65.0" styleClass="red" stylesheets="@../css/labels.css" text="10">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </JFXTextField>
+               </children>
+            </HBox>
+            <JFXButton fx:id="jfxButton" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" onAction="#startSimulation" prefHeight="82.0" prefWidth="360.0" ripplerFill="#611b1b" style="-fx-border-radius: 10;" text="Rozpocznij symulację" textFill="#720000" translateX="120.0">
+               <font>
+                  <Font size="29.0" />
+               </font>
+               <effect>
+                  <InnerShadow />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
